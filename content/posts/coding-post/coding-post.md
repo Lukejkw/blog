@@ -1,13 +1,9 @@
 ---
-title: Coding Post
-description: Coding is such a blissful activity.
+title: A new blog
+description: Posts coming soon
 date: 2020-04-19T11:00:00.000Z
 ---
 
-```jsx
-import React from "react";
+Welcome to my new blog.
 
-const CoolComponent = () => <div>I'm a cool component!!</div>;
-
-export default CoolComponent;
-```
+Expect new and exciting content soon!
