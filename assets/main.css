@@ -6,15 +6,15 @@
   @import "./base.css";
 
   a {
-    @apply text-primary dark:text-yellow-500;
+    @apply text-primary font-bold;
   }
 
   .banner{
     background-image: url('content/assets/banner.jpg');
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 350px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-color: #cccccc;
+    height: 330px;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 }

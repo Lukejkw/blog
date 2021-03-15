@@ -22,7 +22,7 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
           <p className="text-sm">{frontmatter.date}</p>
         </header>
         <ReactMarkdown
-          className="mb-4 prose lg:prose-lg dark:prose-dark"
+          className="mb-4 prose lg:prose-lg"
           escapeHtml={false}
           source={post.content}
           renderers={{ code: CodeBlock, image: MarkdownImage }}

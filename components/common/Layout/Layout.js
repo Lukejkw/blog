@@ -41,7 +41,6 @@ const Header = () => {
   };
 
   const isRoot = pathname === "/";
-  const isDarkMode = resolvedTheme === "dark";
   const { title } = getSiteMetaData();
 
   return (
@@ -56,13 +55,6 @@ const Header = () => {
 
         <Bio className="my-14" />
       </div>
-      {mounted && (
-        <DarkModeSwitch
-          checked={isDarkMode}
-          onChange={toggleDarkMode}
-          className={isRoot ? 28 : 24}
-        />
-      )}
     </header>
   );
 };
@@ -74,7 +66,6 @@ const LargeTitle = ({title}) => {
         className={clsx(
           "text-5xl font-black leading-none text-primary no-underline font-display",
           "sm:text-5xl",
-          "dark:text-white"
         )}
       >
         {title}
@@ -88,8 +79,7 @@ const SmallTitle = ({title}) => (
     <Link href="/">
       <a
         className={clsx(
-          "text-2xl font-black text-black no-underline font-display",
-          "dark:text-white"
+          "text-2xl font-black text-black no-underline font-display"
         )}
       >
         Luke Warren's Blog
