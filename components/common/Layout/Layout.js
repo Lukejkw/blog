@@ -33,13 +33,6 @@ const Header = () => {
 
   useEffect(() => setMounted(true), []);
 
-  const toggleDarkMode = (checked) => {
-    const isDarkMode = checked;
-
-    if (isDarkMode) setTheme("dark");
-    else setTheme("light");
-  };
-
   const isRoot = pathname === "/";
   const { title } = getSiteMetaData();
 
@@ -64,7 +57,7 @@ const LargeTitle = ({title}) => {
     <Link href="/">
       <a
         className={clsx(
-          "text-5xl font-black leading-none text-primary no-underline font-display",
+          "text-5xl leading-none text-primary no-underline font-display",
           "sm:text-5xl",
         )}
       >
@@ -79,7 +72,7 @@ const SmallTitle = ({title}) => (
     <Link href="/">
       <a
         className={clsx(
-          "text-2xl font-black text-black no-underline font-display"
+          "text-2xl leading-none text-primary no-underline font-display"
         )}
       >
         Luke Warren's Blog
