@@ -6,7 +6,16 @@
   @import "./base.css";
 
   a {
-    @apply text-neon-orange dark:text-yellow-500;
+    @apply text-primary dark:text-yellow-500;
+  }
+
+  .banner{
+    background-image: url('content/assets/banner.jpg');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 350px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
   }
 }
 

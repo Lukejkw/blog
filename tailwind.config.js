@@ -22,6 +22,14 @@ const defaultSerif = [
   "serif",
 ];
 
+/*
+--light-gray: ;
+--madder-lake: #cc2936ff;
+--white: #ffffffff;
+--dim-gray: #686963ff;
+--xiketic: #0e0004ff;
+*/
+
 module.exports = {
   purge: {
     mode: "all",
@@ -37,7 +45,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "neon-orange": "#f92300",
+        "primary": "#cc2936ff",
+        "secondary": "#0e0004ff",
+        "background": "#cdd7d6ff",
+        "dim-grey": "#686963ff"
       },
       fontSize: {
         "7xl": "4.5rem",
@@ -59,7 +70,7 @@ module.exports = {
               backgroundColor: theme("colors.gray.700"),
             },
             a: {
-              color: theme("colors.neon-orange"),
+              color: theme("colors.primary"),
             },
           },
         },
@@ -77,7 +88,7 @@ module.exports = {
               backgroundColor: theme("colors.gray.300"),
             },
             a: {
-              color: theme("colors.yellow.500"),
+              color: theme("colors.primary.500"),
             },
             h1: {
               color: theme("colors.gray.100"),

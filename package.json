@@ -1,7 +1,7 @@
 {
   "name": "nextjs-blog-starter",
   "version": "0.2.0",
-  "description": "A Next.js template for a blog website.",
+  "description": "Luke Warren's Blog",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -1,4 +1,4 @@
-import SiteConfig from "@config/seo.json";
+import SiteConfig from "@config/seo";
 
 export function getSiteMetaData() {
   return SiteConfig.siteMetadata;

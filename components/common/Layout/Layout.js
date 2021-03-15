@@ -4,18 +4,23 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "next-themes";
+import { Bio } from "@components/common/Bio"
+import { getSiteMetaData } from "@utils/helpers"
 
 export function Layout({ children }) {
   return (
-    <div className="w-full min-h-screen dark:bg-gray-700 dark:text-white">
-      <div className="max-w-screen-sm px-4 py-12 mx-auto antialiased font-body">
+    <div>
+      <div className="px-6 py-20 banner">
         <Header />
-        <main>{children}</main>
-        <footer className="text-lg font-light">
-          © {new Date().getFullYear()}, Built with{" "}
-          <a href="https://nextjs.org/">Next.js</a>
-          &#128293;
-        </footer>
+      </div>
+      <div className="w-full min-h-screen dark:bg-dim-gray dark:text-white">
+        <div className="max-w-screen-lg px-4 py-12 mx-auto antialiased font-body">
+          <main>{children}</main>
+          <footer className="text-lg font-light">
+            © {new Date().getFullYear()}, Built by Luke Warren
+
+          </footer>
+        </div>
       </div>
     </div>
   );
@@ -37,6 +42,7 @@ const Header = () => {
 
   const isRoot = pathname === "/";
   const isDarkMode = resolvedTheme === "dark";
+  const { title } = getSiteMetaData();
 
   return (
     <header
@@ -45,8 +51,10 @@ const Header = () => {
         "mb-2": !isRoot,
       })}
     >
-      <div className={"max-w-md"}>
-        {isRoot ? <LargeTitle /> : <SmallTitle />}
+      <div className={"max-w-lg"}>
+        {isRoot ? <LargeTitle title={title} /> : <SmallTitle title={title}  />}
+
+        <Bio className="my-14" />
       </div>
       {mounted && (
         <DarkModeSwitch
@@ -59,23 +67,23 @@ const Header = () => {
   );
 };
 
-const LargeTitle = () => (
-  <h1>
+const LargeTitle = ({title}) => {
+  return <h1>
     <Link href="/">
       <a
         className={clsx(
-          "text-3xl font-black leading-none text-black no-underline font-display",
+          "text-5xl font-black leading-none text-primary no-underline font-display",
           "sm:text-5xl",
           "dark:text-white"
         )}
       >
-        Next.Js Starter Blog
+        {title}
       </a>
     </Link>
   </h1>
-);
+};
 
-const SmallTitle = () => (
+const SmallTitle = ({title}) => (
   <h1>
     <Link href="/">
       <a
@@ -84,7 +92,7 @@ const SmallTitle = () => (
           "dark:text-white"
         )}
       >
-        Next.Js Starter Blog
+        Luke Warren's Blog
       </a>
     </Link>
   </h1>
