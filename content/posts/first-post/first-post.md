@@ -7,6 +7,3 @@ date: 2021-03-15T11:00:00.000Z
 Welcome to my new blog.
 
 Expect new and exciting content soon!
-
-This is what code looks like
-

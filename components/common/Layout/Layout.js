@@ -10,7 +10,7 @@ import { getSiteMetaData } from "@utils/helpers"
 export function Layout({ children }) {
   return (
     <div>
-      <div className="px-6 py-20 banner">
+      <div className="px-6 py-10 banner">
         <Header />
       </div>
       <div className="w-full min-h-screen">
@@ -39,26 +39,25 @@ const Header = () => {
   return (
     <header
       className={clsx("flex items-center justify-between ", {
-        "mb-8": isRoot,
+        "mb-6": isRoot,
         "mb-2": !isRoot,
       })}
     >
       <div className={"max-w-lg"}>
-        {isRoot ? <LargeTitle title={title} /> : <SmallTitle title={title}  />}
+        <Title title={title} />
 
-        <Bio className="my-14" />
+        <Bio className="my-10" />
       </div>
     </header>
   );
 };
 
-const LargeTitle = ({title}) => {
+const Title = ({title}) => {
   return <h1>
     <Link href="/">
       <a
         className={clsx(
-          "text-5xl leading-none text-primary no-underline font-display",
-          "sm:text-5xl",
+          "md:text-5xl text-4xl leading-none text-primary no-underline font-display"
         )}
       >
         {title}
@@ -66,17 +65,3 @@ const LargeTitle = ({title}) => {
     </Link>
   </h1>
 };
-
-const SmallTitle = ({title}) => (
-  <h1>
-    <Link href="/">
-      <a
-        className={clsx(
-          "text-2xl leading-none text-primary no-underline font-display"
-        )}
-      >
-        Luke Warren's Blog
-      </a>
-    </Link>
-  </h1>
-);
