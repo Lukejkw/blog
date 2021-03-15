@@ -41,7 +41,6 @@ module.exports = {
       safelist: { deep: [/blur$/] },
     },
   },
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -82,10 +81,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("@tailwindcss/typography")],
-  variants: {
-    extend: {
-      typography: ["dark"],
-    },
-  },
+  plugins: [require("@tailwindcss/typography")]
 };

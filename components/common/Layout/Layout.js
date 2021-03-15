@@ -13,7 +13,7 @@ export function Layout({ children }) {
       <div className="px-6 py-20 banner">
         <Header />
       </div>
-      <div className="w-full min-h-screen dark:bg-dim-gray dark:text-white">
+      <div className="w-full min-h-screen">
         <div className="max-w-screen-lg px-4 py-12 mx-auto antialiased font-body">
           <main>{children}</main>
           <footer className="text-lg font-light">
