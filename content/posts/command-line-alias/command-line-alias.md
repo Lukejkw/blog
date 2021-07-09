@@ -1,6 +1,6 @@
 ---
 title: Command Line Aliases
-description: Make you life in the command line easier
+description: Lessen the amount of typing you do in the command line by defining aliases for your specific workflow
 date: 2021-07-09T12:00:00.000Z
 ---
 
