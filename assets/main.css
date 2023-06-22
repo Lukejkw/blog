@@ -10,7 +10,7 @@
   }
 
   .banner{
-    background-image: url('content/assets/banner.jpg');
+    background-image: url('/img/banner.jpg');
     background-color: #cccccc;
     height: 280px;
     background-position: center;
