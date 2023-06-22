@@ -1,10 +1,35 @@
 import Link from "next/link";
+import Script from "next/script";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 
 import { Layout, Image, SEO, Bio } from "@components/common";
 import { getPostBySlug, getPostsSlugs } from "@utils/posts";
+
+function DisqusComments() {
+  <div id="disqus_thread"></div>
+  <Script>
+    {`
+    /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://lukewarren-dev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    `}
+  </Script>
+}
 
 export default function Post({ post, frontmatter, nextPost, previousPost }) {
   return (
@@ -27,6 +52,9 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
           source={post.content}
           renderers={{ code: CodeBlock, image: MarkdownImage }}
         />
+
+        <DisqusComments />
+
         <hr className="mt-4" />
         <footer>
           <Bio className="mt-8 mb-16" />
